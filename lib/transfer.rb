@@ -14,10 +14,10 @@ class Transfer
   end
   
   def execute_transaction
-    <--if self.valid?
-      self.sender.balance -= self.amount
-      self.receiver.deposit (self.amount)
-    end
+    #if self.valid?
+      #self.sender.balance -= self.amount
+      #self.receiver.deposit (self.amount)
+    #end
   end
   
   def reverse_transfer
