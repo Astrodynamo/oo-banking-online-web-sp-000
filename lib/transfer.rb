@@ -10,11 +10,13 @@ class Transfer
   end
   
   def valid?
-    true if self.sender.valid? && self.receiver.valid? && self.sender.balance >= amount
+    true if self.sender.valid? && self.receiver.valid? && self.sender.balance >= self.amount
   end
   
   def execute_transaction
-    
+    if self.valid?
+      self.sender.balance -= self.amount
+      self.receiver.deposit (self.amount)
   end
   
   def reverse_transfer
